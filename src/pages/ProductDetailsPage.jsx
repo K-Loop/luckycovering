@@ -100,14 +100,19 @@ const ProductDetailsPage = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
         <div className="lg:col-span-6 space-y-4">
           <div
-            onMouseEnter={() => setIsZoomed(true)}
+            onMouseEnter={() => {
+              if (window.innerWidth >= 640) setIsZoomed(true);
+            }}
             onMouseLeave={() => setIsZoomed(false)}
-            onMouseMove={handleMouseMove}
-            className="relative aspect-square w-full rounded-3xl overflow-hidden border border-[#C59B3E]/35 dark:border-[#D4AF37]/35 bg-[#221209] shadow-2xl cursor-zoom-in"
+            onMouseMove={(e) => {
+              if (window.innerWidth >= 640) handleMouseMove(e);
+            }}
+            className="relative aspect-square w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-[#C59B3E]/35 dark:border-[#D4AF37]/35 bg-[#221209] shadow-2xl sm:cursor-zoom-in"
           >
             <img
               src={selectedImage}
               alt={product.name}
+              decoding="async"
               style={
                 isZoomed
                   ? {
@@ -119,7 +124,7 @@ const ProductDetailsPage = () => {
               className="h-full w-full object-cover object-center transition-transform duration-200 ease-out"
             />
 
-            <div className="pointer-events-none absolute bottom-4 right-4 flex items-center gap-1.5 rounded-full bg-black/65 backdrop-blur-md border border-[#D4AF37]/40 px-3 py-1.5 text-[11px] text-[#F3E5AB]">
+            <div className="pointer-events-none hidden sm:flex absolute bottom-4 right-4 items-center gap-1.5 rounded-full bg-black/65 backdrop-blur-md border border-[#D4AF37]/40 px-3 py-1.5 text-[11px] text-[#F3E5AB]">
               <ZoomIn className="w-3.5 h-3.5 text-[#D4AF37]" />
               <span>Hover to Zoom</span>
             </div>

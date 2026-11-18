@@ -532,8 +532,14 @@ const Navbar = () => {
                     Wishlist ({wishlist.length})
                   </Link>
                   <Link
-                    to="/contact"
+                    to="/cart"
                     className="rounded-xl px-3.5 py-2.5 bg-[#F3ECE1] dark:bg-[#10121C] text-[#1A1615] dark:text-[#F8F5EE] hover:text-[#D4AF37]"
+                  >
+                    My Cart ({cartCount})
+                  </Link>
+                  <Link
+                    to="/contact"
+                    className="col-span-2 rounded-xl px-3.5 py-2.5 bg-[#F3ECE1] dark:bg-[#10121C] text-[#1A1615] dark:text-[#F8F5EE] hover:text-[#D4AF37] text-center"
                   >
                     Contact Support
                   </Link>

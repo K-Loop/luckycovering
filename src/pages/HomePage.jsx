@@ -68,7 +68,7 @@ const HomePage = () => {
   return (
     <div className="overflow-hidden">
       {/* 1. FULL-WIDTH CINEMATIC HERO SLIDER (16:9) */}
-      <section className="relative w-full h-[540px] sm:h-[620px] lg:h-[700px] bg-[#090A0F] overflow-hidden select-none">
+      <section className="relative w-full h-[480px] sm:h-[600px] lg:h-[700px] bg-[#090A0F] overflow-hidden select-none">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide.id}
@@ -81,61 +81,68 @@ const HomePage = () => {
             <img
               src={currentSlide.image}
               alt={currentSlide.title}
-              className="h-full w-full object-cover object-center"
+              fetchPriority="high"
+              decoding="async"
+              className={`h-full w-full object-cover ${
+                currentSlide.align === 'right'
+                  ? 'object-[24%_top] sm:object-center'
+                  : 'object-[76%_top] sm:object-center'
+              }`}
             />
+            {/* Mobile bottom-to-top dark gradient + Desktop directional gradient */}
             <div
               className={`absolute inset-0 ${
                 currentSlide.align === 'right'
-                  ? 'bg-gradient-to-r from-black/35 via-black/55 to-black/88'
-                  : 'bg-gradient-to-l from-black/25 via-black/60 to-black/90'
+                  ? 'bg-gradient-to-t from-[#08090F] via-[#08090F]/55 to-black/20 sm:bg-gradient-to-r sm:from-black/35 sm:via-black/55 sm:to-black/88'
+                  : 'bg-gradient-to-t from-[#08090F] via-[#08090F]/55 to-black/20 sm:bg-gradient-to-l sm:from-black/25 sm:via-black/60 sm:to-black/90'
               }`}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#08090F] via-transparent to-black/25" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#08090F] via-transparent to-black/20" />
           </motion.div>
         </AnimatePresence>
 
         {/* Hero Content Container */}
-        <div className="relative z-10 mx-auto h-full max-w-[1400px] px-6 sm:px-12 lg:px-16 flex items-center">
+        <div className="relative z-10 mx-auto h-full max-w-[1400px] px-5 sm:px-12 lg:px-16 flex items-end pb-12 sm:items-center sm:pb-0">
           <div
             ref={heroHeadingRef}
             className={`w-full max-w-xl lg:max-w-2xl ${
               currentSlide.align === 'right'
-                ? 'ml-auto text-center lg:text-center'
-                : 'mr-auto text-left'
+                ? 'mx-auto sm:ml-auto sm:mr-0 text-center'
+                : 'mx-auto sm:mr-auto sm:ml-0 text-center sm:text-left'
             }`}
           >
             <div
-              className={`inline-flex items-center gap-3 mb-3 ${
-                currentSlide.align === 'right' ? 'justify-center' : 'justify-start'
+              className={`inline-flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3 ${
+                currentSlide.align === 'right' ? 'justify-center' : 'justify-center sm:justify-start'
               }`}
             >
-              <span className="h-[1px] w-8 sm:w-12 bg-gradient-to-r from-transparent to-[#D4AF37]" />
-              <span className="text-xs sm:text-sm uppercase tracking-[0.35em] text-[#F3E5AB] font-medium">
+              <span className="h-[1px] w-6 sm:w-12 bg-gradient-to-r from-transparent to-[#D4AF37]" />
+              <span className="text-[10px] sm:text-sm uppercase tracking-[0.28em] sm:tracking-[0.35em] text-[#F3E5AB] font-medium">
                 {currentSlide.subtitle}
               </span>
-              <span className="h-[1px] w-8 sm:w-12 bg-gradient-to-l from-transparent to-[#D4AF37]" />
+              <span className="h-[1px] w-6 sm:w-12 bg-gradient-to-l from-transparent to-[#D4AF37]" />
             </div>
 
-            <h1 className="font-serif-luxury text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight bg-gradient-to-r from-[#F6E299] via-[#D4AF37] to-[#FBF0B9] bg-clip-text text-transparent drop-shadow-[0_4px_24px_rgba(0,0,0,0.6)] leading-[1.08]">
+            <h1 className="font-serif-luxury text-3xl sm:text-6xl lg:text-7xl font-bold tracking-tight bg-gradient-to-r from-[#F6E299] via-[#D4AF37] to-[#FBF0B9] bg-clip-text text-transparent drop-shadow-[0_4px_24px_rgba(0,0,0,0.6)] leading-[1.08]">
               {currentSlide.title}
             </h1>
 
-            <p className="mt-2 font-serif-luxury italic text-2xl sm:text-3xl lg:text-4xl text-[#F8F5EE]/95 font-normal">
+            <p className="mt-1 sm:mt-2 font-serif-luxury italic text-xl sm:text-3xl lg:text-4xl text-[#F8F5EE]/95 font-normal">
               {currentSlide.tagline}
             </p>
 
-            <p className="mt-4 text-sm sm:text-base text-[#D8D0C2] max-w-lg mx-auto lg:mx-auto leading-relaxed">
+            <p className="mt-2.5 sm:mt-4 text-xs sm:text-base text-[#D8D0C2] max-w-lg mx-auto leading-relaxed line-clamp-2 sm:line-clamp-none">
               {currentSlide.description}
             </p>
 
             <div
-              className={`mt-7 flex flex-wrap items-center gap-4 ${
-                currentSlide.align === 'right' ? 'justify-center' : 'justify-start'
+              className={`mt-4 sm:mt-7 flex flex-wrap items-center gap-3 sm:gap-4 ${
+                currentSlide.align === 'right' ? 'justify-center' : 'justify-center sm:justify-start'
               }`}
             >
               <Link
                 to={currentSlide.ctaLink}
-                className="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-[#E8C76A] via-[#D4AF37] to-[#B58927] px-8 py-3.5 text-sm sm:text-base font-semibold text-[#090A0F] shadow-[0_10px_30px_rgba(212,175,55,0.4)] hover:shadow-[0_12px_36px_rgba(212,175,55,0.65)] transition-all duration-300 hover:scale-[1.03]"
+                className="group inline-flex items-center gap-2 sm:gap-3 rounded-full bg-gradient-to-r from-[#E8C76A] via-[#D4AF37] to-[#B58927] px-6 sm:px-8 py-2.5 sm:py-3.5 text-xs sm:text-base font-semibold text-[#090A0F] shadow-[0_10px_30px_rgba(212,175,55,0.4)] hover:shadow-[0_12px_36px_rgba(212,175,55,0.65)] transition-all duration-300 hover:scale-[1.03]"
               >
                 <span>{currentSlide.ctaText}</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -143,7 +150,7 @@ const HomePage = () => {
 
               <Link
                 to={currentSlide.secondaryLink}
-                className="inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/50 bg-black/40 backdrop-blur-md px-6 py-3.5 text-sm font-medium text-[#F3E5AB] hover:bg-[#D4AF37]/15 hover:border-[#D4AF37] transition-all"
+                className="inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/50 bg-black/45 backdrop-blur-md px-5 sm:px-6 py-2.5 sm:py-3.5 text-xs sm:text-sm font-medium text-[#F3E5AB] hover:bg-[#D4AF37]/15 hover:border-[#D4AF37] transition-all"
               >
                 <span>{currentSlide.secondaryCta}</span>
               </Link>
@@ -156,32 +163,32 @@ const HomePage = () => {
           type="button"
           onClick={prevSlide}
           aria-label="Previous Hero Slide"
-          className="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 z-20 flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-[#D4AF37]/40 bg-black/45 text-[#F3E5AB] backdrop-blur-md hover:bg-[#D4AF37] hover:text-[#090A0F] transition-all cursor-pointer"
+          className="absolute left-2.5 sm:left-6 top-1/3 sm:top-1/2 -translate-y-1/2 z-20 flex h-9 w-9 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-[#D4AF37]/40 bg-black/45 text-[#F3E5AB] backdrop-blur-md hover:bg-[#D4AF37] hover:text-[#090A0F] transition-all cursor-pointer"
         >
-          <ChevronLeft className="w-5 h-5" />
+          <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
         </button>
 
         <button
           type="button"
           onClick={nextSlide}
           aria-label="Next Hero Slide"
-          className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 z-20 flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-[#D4AF37]/40 bg-black/45 text-[#F3E5AB] backdrop-blur-md hover:bg-[#D4AF37] hover:text-[#090A0F] transition-all cursor-pointer"
+          className="absolute right-2.5 sm:right-6 top-1/3 sm:top-1/2 -translate-y-1/2 z-20 flex h-9 w-9 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-[#D4AF37]/40 bg-black/45 text-[#F3E5AB] backdrop-blur-md hover:bg-[#D4AF37] hover:text-[#090A0F] transition-all cursor-pointer"
         >
-          <ChevronRight className="w-5 h-5" />
+          <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
         </button>
 
         {/* Bottom Pagination Dots */}
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2.5">
+        <div className="absolute bottom-4 sm:bottom-12 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2.5">
           {HERO_SLIDES.map((s, idx) => (
             <button
               key={s.id}
               type="button"
               onClick={() => setActiveSlide(idx)}
               aria-label={`Slide ${idx + 1}`}
-              className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+              className={`h-2 sm:h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
                 idx === activeSlide
-                  ? 'w-8 bg-[#D4AF37] shadow-[0_0_12px_#D4AF37]'
-                  : 'w-2.5 bg-white/40 hover:bg-white/70'
+                  ? 'w-7 sm:w-8 bg-[#D4AF37] shadow-[0_0_12px_#D4AF37]'
+                  : 'w-2 sm:w-2.5 bg-white/40 hover:bg-white/70'
               }`}
             />
           ))}
@@ -189,7 +196,7 @@ const HomePage = () => {
       </section>
 
       {/* 2. PREMIUM SERVICE HIGHLIGHTS BAR */}
-      <section className="relative z-20 -mt-8 mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
+      <section className="relative z-20 mt-4 sm:-mt-8 mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -288,7 +295,7 @@ const HomePage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: Math.min(idx * 0.06, 0.35) }}
-                className="shrink-0 w-[210px] sm:w-[235px]"
+                className="shrink-0 w-[166px] sm:w-[235px]"
               >
                 <Link
                   to={`/category/${cat.slug}`}

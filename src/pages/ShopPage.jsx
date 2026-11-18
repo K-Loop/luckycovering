@@ -106,13 +106,14 @@ const ShopPage = () => {
   return (
     <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
       {/* Top Luxury Banner Header */}
-      <div className="relative rounded-3xl overflow-hidden border border-[#C59B3E]/35 dark:border-[#D4AF37]/35 mb-8 min-h-[220px] sm:min-h-[250px] flex items-center p-6 sm:p-12">
+      <div className="relative rounded-3xl overflow-hidden border border-[#C59B3E]/35 dark:border-[#D4AF37]/35 mb-8 min-h-[210px] sm:min-h-[250px] flex items-end sm:items-center p-5 sm:p-12">
         <img
           src={promoBanners.newArrivals.image}
           alt="Lucky Covering Royal Catalogue"
-          className="absolute inset-0 h-full w-full object-cover object-center"
+          decoding="async"
+          className="absolute inset-0 h-full w-full object-cover object-[75%_center] sm:object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0F0805]/95 via-[#0F0805]/80 to-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0F0805]/95 via-[#0F0805]/75 to-black/25 sm:bg-gradient-to-r sm:from-[#0F0805]/95 sm:via-[#0F0805]/80 sm:to-black/30" />
 
         <div className="relative z-10 max-w-xl space-y-2.5">
           <nav className="flex items-center gap-2 text-xs text-[#C4BCAC]">

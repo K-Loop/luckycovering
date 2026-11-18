@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lucky Covering | Redirecting...</title>
+    <script>
+      // SPA fallback for GitHub Pages / static hosts when opening /wishlist, /cart, /admin directly
+      (function () {
+        var redirectPath = window.location.pathname + window.location.search + window.location.hash;
+        if (redirectPath && redirectPath !== '/') {
+          sessionStorage.setItem('lc_spa_redirect', redirectPath);
+        }
+        window.location.replace('/');
+      })();
+    </script>
+  </head>
+  <body style="background:#08090F;color:#D4AF37;font-family:sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;">
+    <p>Loading Lucky Covering...</p>
+  </body>
+</html>

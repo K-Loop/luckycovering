@@ -1,51 +1,51 @@
-// Centralised original AI-generated jewellery & brand assets for Lucky Covering
-import logoDarkBg from '../assets/images/logo/logo-dark-bg.jpg';
-import logoTransparent from '../assets/images/logo/logo-transparent.png';
+// Centralised original AI-generated jewellery & brand assets for Lucky Covering (Optimized WebP)
+import logoDarkBg from '../assets/images/logo/logo-dark-bg.webp';
+import logoTransparent from '../assets/images/logo/logo-transparent.webp';
 
 // Hero campaign slides (16:9)
-import hero1 from '../assets/images/hero/hero-1.png';
-import hero2 from '../assets/images/hero/hero-2.png';
-import hero3 from '../assets/images/hero/hero-3.png';
+import hero1 from '../assets/images/hero/hero-1.webp';
+import hero2 from '../assets/images/hero/hero-2.webp';
+import hero3 from '../assets/images/hero/hero-3.webp';
 
 // Category squares (1:1 on chocolate-brown satin with white flowers)
-import catAnklets from '../assets/images/categories/cat-anklets.png';
-import catBangles from '../assets/images/categories/cat-bangles.png';
-import catBracelets from '../assets/images/categories/cat-bracelets.png';
-import catDesignChains from '../assets/images/categories/cat-design-chains.png';
-import catEarrings from '../assets/images/categories/cat-earrings.png';
-import catNeckpieces from '../assets/images/categories/cat-neckpieces.png';
-import catPendants from '../assets/images/categories/cat-pendants.png';
-import catShortChains from '../assets/images/categories/cat-short-chains.png';
-import catThalliChains from '../assets/images/categories/cat-thalli-chains.png';
-import catAccessories from '../assets/images/categories/cat-accessories.png';
+import catAnklets from '../assets/images/categories/cat-anklets.webp';
+import catBangles from '../assets/images/categories/cat-bangles.webp';
+import catBracelets from '../assets/images/categories/cat-bracelets.webp';
+import catDesignChains from '../assets/images/categories/cat-design-chains.webp';
+import catEarrings from '../assets/images/categories/cat-earrings.webp';
+import catNeckpieces from '../assets/images/categories/cat-neckpieces.webp';
+import catPendants from '../assets/images/categories/cat-pendants.webp';
+import catShortChains from '../assets/images/categories/cat-short-chains.webp';
+import catThalliChains from '../assets/images/categories/cat-thalli-chains.webp';
+import catAccessories from '../assets/images/categories/cat-accessories.webp';
 
 // Promotional banners (16:9)
-import bannerSeasonalSale from '../assets/images/banners/banner-seasonal-sale.png';
-import bannerNewArrivals from '../assets/images/banners/banner-new-arrivals.png';
-import bannerWedding from '../assets/images/banners/banner-wedding.png';
-import bannerFestive from '../assets/images/banners/banner-festive.png';
+import bannerSeasonalSale from '../assets/images/banners/banner-seasonal-sale.webp';
+import bannerNewArrivals from '../assets/images/banners/banner-new-arrivals.webp';
+import bannerWedding from '../assets/images/banners/banner-wedding.webp';
+import bannerFestive from '../assets/images/banners/banner-festive.webp';
 
 // 20 Unique Product Photographs (1:1)
-import prod01 from '../assets/images/products/prod-01-temple-necklace.png';
-import prod02 from '../assets/images/products/prod-02-antique-jhumkas.png';
-import prod03 from '../assets/images/products/prod-03-bridal-haram-set.png';
-import prod04 from '../assets/images/products/prod-04-lakshmi-bangles.png';
-import prod05 from '../assets/images/products/prod-05-stone-bracelet.png';
-import prod06 from '../assets/images/products/prod-06-peacock-pendant.png';
-import prod07 from '../assets/images/products/prod-07-imperial-gold-chain.png';
-import prod08 from '../assets/images/products/prod-08-ruby-emerald-choker.png';
-import prod09 from '../assets/images/products/prod-09-ashta-lakshmi-haram.png';
-import prod10 from '../assets/images/products/prod-10-bridal-payal-anklets.png';
-import prod11 from '../assets/images/products/prod-11-chandbali-earrings.png';
-import prod12 from '../assets/images/products/prod-12-thalli-kodi-chain.png';
-import prod13 from '../assets/images/products/prod-13-kemp-bangles-set.png';
-import prod14 from '../assets/images/products/prod-14-short-daily-chain.png';
-import prod15 from '../assets/images/products/prod-15-guttapusalu-necklace.png';
-import prod16 from '../assets/images/products/prod-16-temple-vaddanam.png';
-import prod17 from '../assets/images/products/prod-17-floral-stud-earrings.png';
-import prod18 from '../assets/images/products/prod-18-cuff-kada-bracelet.png';
-import prod19 from '../assets/images/products/prod-19-rudraksha-gold-pendant.png';
-import prod20 from '../assets/images/products/prod-20-bridal-maang-tikka.png';
+import prod01 from '../assets/images/products/prod-01-temple-necklace.webp';
+import prod02 from '../assets/images/products/prod-02-antique-jhumkas.webp';
+import prod03 from '../assets/images/products/prod-03-bridal-haram-set.webp';
+import prod04 from '../assets/images/products/prod-04-lakshmi-bangles.webp';
+import prod05 from '../assets/images/products/prod-05-stone-bracelet.webp';
+import prod06 from '../assets/images/products/prod-06-peacock-pendant.webp';
+import prod07 from '../assets/images/products/prod-07-imperial-gold-chain.webp';
+import prod08 from '../assets/images/products/prod-08-ruby-emerald-choker.webp';
+import prod09 from '../assets/images/products/prod-09-ashta-lakshmi-haram.webp';
+import prod10 from '../assets/images/products/prod-10-bridal-payal-anklets.webp';
+import prod11 from '../assets/images/products/prod-11-chandbali-earrings.webp';
+import prod12 from '../assets/images/products/prod-12-thalli-kodi-chain.webp';
+import prod13 from '../assets/images/products/prod-13-kemp-bangles-set.webp';
+import prod14 from '../assets/images/products/prod-14-short-daily-chain.webp';
+import prod15 from '../assets/images/products/prod-15-guttapusalu-necklace.webp';
+import prod16 from '../assets/images/products/prod-16-temple-vaddanam.webp';
+import prod17 from '../assets/images/products/prod-17-floral-stud-earrings.webp';
+import prod18 from '../assets/images/products/prod-18-cuff-kada-bracelet.webp';
+import prod19 from '../assets/images/products/prod-19-rudraksha-gold-pendant.webp';
+import prod20 from '../assets/images/products/prod-20-bridal-maang-tikka.webp';
 
 export const BRAND_LOGOS = {
   darkBg: logoDarkBg,

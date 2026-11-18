@@ -28,12 +28,15 @@ function App() {
               <Route path="category/:slug" element={<CategoryPage />} />
               <Route path="product/:id" element={<ProductDetailsPage />} />
               <Route path="wishlist" element={<WishlistPage />} />
+              <Route path="Wishlist" element={<Navigate to="/wishlist" replace />} />
               <Route path="cart" element={<CartPage />} />
+              <Route path="Cart" element={<Navigate to="/cart" replace />} />
               <Route path="login" element={<LoginPage />} />
               <Route path="track-order" element={<OrderTrackingPage />} />
               <Route path="about" element={<AboutPage />} />
               <Route path="contact" element={<ContactPage />} />
               <Route path="admin" element={<AdminDashboardPage />} />
+              <Route path="Admin" element={<Navigate to="/admin" replace />} />
               {/* Legacy & shorthand redirects */}
               <Route path="products" element={<Navigate to="/shop" replace />} />
               <Route path="categories" element={<Navigate to="/category/neckpieces" replace />} />

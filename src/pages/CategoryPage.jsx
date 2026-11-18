@@ -58,14 +58,15 @@ const CategoryPage = () => {
   return (
     <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
       {/* Category Hero Banner */}
-      <div className="relative rounded-3xl overflow-hidden border border-[#C59B3E]/35 dark:border-[#D4AF37]/35 mb-8 min-h-[240px] sm:min-h-[280px] flex items-center bg-[#1B0E08]">
-        <div className="absolute right-0 top-0 bottom-0 w-full sm:w-2/3">
+      <div className="relative rounded-3xl overflow-hidden border border-[#C59B3E]/35 dark:border-[#D4AF37]/35 mb-8 min-h-[240px] sm:min-h-[280px] flex items-end sm:items-center bg-[#1B0E08]">
+        <div className="absolute inset-0 sm:left-auto sm:w-2/3">
           <img
             src={currentCategory.image}
             alt={currentCategory.name}
+            decoding="async"
             className="h-full w-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#120905] via-[#120905]/85 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#120905] via-[#120905]/75 to-transparent sm:bg-gradient-to-r sm:from-[#120905] sm:via-[#120905]/85 sm:to-transparent" />
         </div>
 
         <div className="relative z-10 p-6 sm:p-12 max-w-xl space-y-2.5">
